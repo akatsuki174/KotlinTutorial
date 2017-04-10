@@ -4,4 +4,5 @@
 fun main(args: Array<String>) {
     // Hello World
     SimplestVersion()
+    ReadingANameFromTheCommandLine(args)
 }
