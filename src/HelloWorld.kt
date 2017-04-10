@@ -7,6 +7,7 @@
  * 文末にセミコロンを付けても付けなくてもいい
  */
 internal fun SimplestVersion() {
+    println("--------------SimplestVersion--------------")
     println("Hello, World!")
 }
 
@@ -15,6 +16,7 @@ internal fun SimplestVersion() {
  */
 
 internal fun ReadingANameFromTheCommandLine(args: Array<String>) {
+    println("--------------ReadingANameFromTheCommandLine--------------")
     if (args.size == 0) {
         println("Please provide a name as a command-line argument")
         return
