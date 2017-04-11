@@ -27,3 +27,15 @@ internal fun ReadingANameFromTheCommandLine(args: Array<String>) {
     }
     println("Hello, ${args[0]}!")
 }
+
+/**
+ * Line 2 demonstrates the for-loop, that would have been called "enhanced"
+ * if there were any other for-loop in Kotlin.
+ * See http://kotlinlang.org/docs/reference/basic-syntax.html#using-a-for-loop
+ */
+fun ReadingManyNamesFromTheCommandLine(args: Array<String>) {
+    println("--------------ReadingManyNamesFromTheCommandLine--------------")
+    for (name in args) {
+        println("Hello, $name!")
+    }
+}
