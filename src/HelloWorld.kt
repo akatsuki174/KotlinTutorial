@@ -6,7 +6,7 @@
  * 最もシンプルなHello World.
  * 文末にセミコロンを付けても付けなくてもいい
  */
-internal fun SimplestVersion() {
+internal fun simplestVersion() {
     println("--------------SimplestVersion--------------")
     println("Hello, World!")
 }
@@ -19,7 +19,7 @@ internal fun SimplestVersion() {
  * 3. Edit Configurationsが選択されているのでEnter
  * 4. ConfigurationタブのProgram argumentsに入力
  */
-internal fun ReadingANameFromTheCommandLine(args: Array<String>) {
+internal fun readingANameFromTheCommandLine(args: Array<String>) {
     println("--------------ReadingANameFromTheCommandLine--------------")
     if (args.size == 0) {
         println("Please provide a name as a command-line argument")
@@ -33,7 +33,7 @@ internal fun ReadingANameFromTheCommandLine(args: Array<String>) {
  * if there were any other for-loop in Kotlin.
  * See http://kotlinlang.org/docs/reference/basic-syntax.html#using-a-for-loop
  */
-fun ReadingManyNamesFromTheCommandLine(args: Array<String>) {
+internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
     println("--------------ReadingManyNamesFromTheCommandLine--------------")
     for (name in args) {
         println("Hello, $name!")

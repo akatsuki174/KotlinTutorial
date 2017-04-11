@@ -3,7 +3,7 @@
  */
 fun main(args: Array<String>) {
     // Hello World
-    SimplestVersion()
-    ReadingANameFromTheCommandLine(args)
-    ReadingManyNamesFromTheCommandLine(args)
+    simplestVersion()
+    readingANameFromTheCommandLine(args)
+    readingManyNamesFromTheCommandLine(args)
 }
