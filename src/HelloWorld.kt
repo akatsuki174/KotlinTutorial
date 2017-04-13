@@ -55,6 +55,21 @@ internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
  */
 internal fun aMultiLanguageHello(args: Array<String>) {
     val language = if (args.size == 0) "EN" else args[0]
+    // 分岐をブロックにすることもできる
+    //    val language = if (args.size == 0) {
+    //        "EN"
+    //    } else {
+    //        args[0]
+    //    }
+
+    // もちろん他の言語で見るような書き方もできる
+    //    var language = ""
+    //    if (args.size == 0) {
+    //        language = "EN"
+    //    } else {
+    //        args[0]
+    //    }
+
     println(when (language) {
         "EN" -> "Hello!"
         "FR" -> "Salut!"
