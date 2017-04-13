@@ -34,3 +34,18 @@ internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
         println("Hello, $name!")
     }
 }
+
+/**
+ * `val`は1度だけ代入できるローカル変数
+ * if文はこのように1行で書くこともできる
+ * whenによるパターンマッチングも行っている。
+ */
+internal fun aMultiLanguageHello(args: Array<String>) {
+    val language = if (args.size == 0) "EN" else args[0]
+    println(when (language) {
+        "EN" -> "Hello!"
+        "FR" -> "Salut!"
+        "IT" -> "Ciao!"
+        else -> "Sorry, I can't greet you in $language yet"
+    })
+}

@@ -6,4 +6,5 @@ fun main(args: Array<String>) {
     simplestVersion()
     readingANameFromTheCommandLine(args)
     readingManyNamesFromTheCommandLine(args)
+    aMultiLanguageHello(args)
 }
