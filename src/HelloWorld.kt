@@ -7,7 +7,6 @@
  * 文末にセミコロンを付けても付けなくてもいい
  */
 internal fun simplestVersion() {
-    println("--------------SimplestVersion--------------")
     println("Hello, World!")
 }
 
@@ -20,7 +19,6 @@ internal fun simplestVersion() {
  * 4. ConfigurationタブのProgram argumentsに入力
  */
 internal fun readingANameFromTheCommandLine(args: Array<String>) {
-    println("--------------ReadingANameFromTheCommandLine--------------")
     if (args.size == 0) {
         println("Please provide a name as a command-line argument")
         return
@@ -32,7 +30,6 @@ internal fun readingANameFromTheCommandLine(args: Array<String>) {
  * ループはこのようにして書くことができるが、他の書き方もある。
  */
 internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
-    println("--------------ReadingManyNamesFromTheCommandLine--------------")
     for (name in args) {
         println("Hello, $name!")
     }
