@@ -77,3 +77,14 @@ internal fun aMultiLanguageHello(args: Array<String>) {
         else -> "Sorry, I can't greet you in $language yet"
     })
 }
+
+/**
+ * 初期コンストラクタを持ったクラスとメンバー関数がある
+ * このオブジェクトを生成する時にnewというキーワードは不要
+ * 参考リンク：http://kotlinlang.org/docs/reference/classes.html#classes
+ */
+class AnObjectOrientedHello(val name: String) {
+    fun greet() {
+        println("Hello, $name")
+    }
+}

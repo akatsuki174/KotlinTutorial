@@ -7,4 +7,5 @@ fun main(args: Array<String>) {
     readingANameFromTheCommandLine(args)
     readingManyNamesFromTheCommandLine(args)
     aMultiLanguageHello(args)
+    AnObjectOrientedHello(args[0]).greet()
 }
