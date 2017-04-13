@@ -17,6 +17,10 @@ internal fun simplestVersion() {
  * 2. eを入力
  * 3. Edit Configurationsが選択されているのでEnter
  * 4. ConfigurationタブのProgram argumentsに入力
+ *
+ * 参考リンク
+ * http://kotlinlang.org/docs/reference/basic-types.html#strings
+ * http://kotlinlang.org/docs/reference/basic-types.html#arrays
  */
 internal fun readingANameFromTheCommandLine(args: Array<String>) {
     if (args.size == 0) {
@@ -28,6 +32,7 @@ internal fun readingANameFromTheCommandLine(args: Array<String>) {
 
 /**
  * ループはこのようにして書くことができるが、他の書き方もある。
+ * 参考リンク：http://kotlinlang.org/docs/reference/basic-syntax.html#using-a-for-loop
  */
 internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
     for (name in args) {
@@ -39,6 +44,7 @@ internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
  * `val`は1度だけ代入できるローカル変数
  * if文はこのように1行で書くこともできる
  * whenによるパターンマッチングも行っている。
+ * 参考リンク：http://kotlinlang.org/docs/reference/control-flow.html#when-expression
  */
 internal fun aMultiLanguageHello(args: Array<String>) {
     val language = if (args.size == 0) "EN" else args[0]
