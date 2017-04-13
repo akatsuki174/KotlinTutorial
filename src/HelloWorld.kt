@@ -38,6 +38,13 @@ internal fun readingManyNamesFromTheCommandLine(args: Array<String>) {
     for (name in args) {
         println("Hello, $name!")
     }
+
+    // このような書き方もできる
+    //for (i in args.indices)
+    //    println("Hello, ${args[i]}!")
+
+    //for ((index, value) in args.withIndex())
+    //println("$index: Hello, $value!")
 }
 
 /**
