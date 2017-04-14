@@ -100,6 +100,11 @@ internal fun aMultiLanguageHello(args: Array<String>) {
  * 参考リンク：http://kotlinlang.org/docs/reference/classes.html#classes
  */
 class AnObjectOrientedHello(val name: String) {
+    // このように書くこともできるがプライマリコンストラクタがアノテーションや可視性修飾子を
+    // 持っていない場合は↑の書き方でも良い
+    // class AnObjectOrientedHello constructor(val name: String) {
+    // }
+
     fun greet() {
         println("Hello, $name")
     }
