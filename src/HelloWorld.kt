@@ -76,6 +76,22 @@ internal fun aMultiLanguageHello(args: Array<String>) {
         "IT" -> "Ciao!"
         else -> "Sorry, I can't greet you in $language yet"
     })
+
+    // 複数条件に当てはまる場合は最初に当てはまった条件の処理が実行される
+    // val x = 1
+    // when (x) {
+    //     in 1..10 -> println("1 <= x <= 10")
+    //     in 0..5 -> println("0 <= x <= 5")
+    //     else -> println("other")
+    // }
+    // 出力 ： 1 <= x <= 10
+
+    // 分岐条件を「,」でまとめることもできる
+    //    val x = 1
+    //    when (x) {
+    //        0,1 -> println("x = 0 or 1")
+    //        else -> println("x != 0 or 1")
+    //    }
 }
 
 /**
