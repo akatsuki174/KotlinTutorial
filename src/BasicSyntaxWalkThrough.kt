@@ -44,7 +44,7 @@ fun nullChecks(args: Array<String>) {
     }
 }
 
-// Return null if str does not hold a number
+// もしstrが数字ではなかったらnullを返す
 fun parseInt(str: String): Int? {
     try {
         return str.toInt()
