@@ -12,6 +12,7 @@ fun main(args: Array<String>) {
 
     // Use a conditional expressions
     println(max(args[0].toInt(), args[1].toInt()))
+    println(max(a = args[0].toInt(), b = args[1].toInt())) // 名前付き引数を使っても書ける
     // Null-checks
     nullChecks(args)
 }
