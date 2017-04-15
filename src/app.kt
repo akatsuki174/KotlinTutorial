@@ -8,4 +8,8 @@ fun main(args: Array<String>) {
     readingManyNamesFromTheCommandLine(args)
     aMultiLanguageHello(args)
     AnObjectOrientedHello(args[0]).greet()
+    // Basic syntax walk-through
+
+    // Use a conditional expressions
+    println(max(args[0].toInt(), args[1].toInt()))
 }
