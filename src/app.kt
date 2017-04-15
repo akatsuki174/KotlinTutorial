@@ -12,4 +12,6 @@ fun main(args: Array<String>) {
 
     // Use a conditional expressions
     println(max(args[0].toInt(), args[1].toInt()))
+    // Null-checks
+    nullChecks(args)
 }

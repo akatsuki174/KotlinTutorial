@@ -13,3 +13,34 @@
  */
 // Use a conditional expressions
 fun max(a: Int, b: Int) = if (a > b) a else b
+
+/**
+ * nullを許可する場合はnullableであることを明示的にする必要があります。
+ * nullの可能性がある場合は「?」を付与します。
+ * 参考リンク：http://kotlinlang.org/docs/reference/null-safety.html#null-safety
+ */
+fun nullChecks(args: Array<String>) {
+    if (args.size < 2) {
+        println("No number supplied");
+    } else {
+        val x = parseInt(args[0])
+        val y = parseInt(args[1])
+
+        // x,yにnullが入っている可能性がある
+        if (x != null && y != null) {
+            print(x * y)
+        } else {
+            println("One of the arguments is null")
+        }
+    }
+}
+
+// Return null if str does not hold a number
+fun parseInt(str: String): Int? {
+    try {
+        return str.toInt()
+    } catch (e: NumberFormatException) {
+        println("One of the arguments isn't Int")
+    }
+    return null
+}
