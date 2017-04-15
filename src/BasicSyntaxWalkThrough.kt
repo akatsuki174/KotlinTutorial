@@ -14,6 +14,15 @@
 // Use a conditional expressions
 fun max(a: Int, b: Int) = if (a > b) a else b
 
+// 戻り値の型を指定することも可能
+// 型推論できる場合はわざわざ書かなくても良い
+//fun max(a: Int, b: Int):Int = if (a > b) a else b
+
+// もちろんブロックを使って書くこともできる
+//fun max(a: Int, b: Int): Int {
+//    return if (a > b) a else b
+//}
+
 /**
  * nullを許可する場合はnullableであることを明示的にする必要があります。
  * nullの可能性がある場合は「?」を付与します。
