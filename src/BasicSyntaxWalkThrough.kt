@@ -53,3 +53,17 @@ fun parseInt(str: String): Int? {
     }
     return null
 }
+
+/**
+ * is演算子はオブジェクトが指定された型かどうかをチェックします。
+ * immutableなローカル変数やプロパティをis演算子でチェックした場合は、明示的にキャストする必要はありません。
+ * If we is-checked an immutable local variable or property, there's no need
+ * 参考リンク
+ * http://kotlinlang.org/docs/reference/classes.html#classes-and-inheritance
+ * http://kotlinlang.org/docs/reference/typecasts.html#smart-casts
+ */
+fun isChecksAndSmartCasts(obj: Any): Int? {
+    if (obj is String)
+        return obj.length // Stringにキャストする必要はない
+    return null
+}

@@ -15,4 +15,7 @@ fun main(args: Array<String>) {
     println(max(a = args[0].toInt(), b = args[1].toInt())) // 名前付き引数を使っても書ける
     // Null-checks
     nullChecks(args)
+    // is-checks and smart casts
+    println(isChecksAndSmartCasts("aaa"))
+    println(isChecksAndSmartCasts(1))
 }
