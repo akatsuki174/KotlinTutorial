@@ -70,3 +70,18 @@ fun isChecksAndSmartCasts(obj: Any): Int? {
         return obj.length // Stringにキャストする必要はない
     return null
 }
+
+/**
+ * `while`と`do..while`の使い方は以下の通り
+ * 参考リンク：http://kotlinlang.org/docs/reference/control-flow.html#while-loops
+ */
+fun useAWhileLoop(args: Array<String>) {
+    var i = 0
+    while (i < args.size)
+        println(args[i++])
+    
+    // do..whileで書くとこんなかんじ
+    //do {
+    //    println(args[i++])
+    //} while (i < args.size)
+}

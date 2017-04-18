@@ -18,4 +18,6 @@ fun main(args: Array<String>) {
     // is-checks and smart casts
     println(isChecksAndSmartCasts("aaa"))
     println(isChecksAndSmartCasts(1))
+    // Use a while-loop
+    useAWhileLoop(args)
 }
