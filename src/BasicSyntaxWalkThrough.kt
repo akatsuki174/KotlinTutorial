@@ -63,6 +63,9 @@ fun parseInt(str: String): Int? {
  * http://kotlinlang.org/docs/reference/typecasts.html#smart-casts
  */
 fun isChecksAndSmartCasts(obj: Any): Int? {
+    //このタイミングでこのコードを書いてもエラーになる
+    //obj.length
+
     if (obj is String)
         return obj.length // Stringにキャストする必要はない
     return null
