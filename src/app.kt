@@ -20,4 +20,6 @@ fun main(args: Array<String>) {
     println(isChecksAndSmartCasts(1))
     // Use a while-loop
     useAWhileLoop(args)
+    // Use a for-loop
+    useAForLoop(args)
 }

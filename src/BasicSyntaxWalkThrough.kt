@@ -85,3 +85,16 @@ fun useAWhileLoop(args: Array<String>) {
     //    println(args[i++])
     //} while (i < args.size)
 }
+
+/**
+ * forループの使い方は以下の通り。
+ * 参考リンク：http://kotlinlang.org/docs/reference/control-flow.html#for-loops
+ */
+fun useAForLoop(args: Array<String>) {
+    for (arg in args)
+        println(arg)
+    println()
+    // 以下の書き方も可能
+    for (i in args.indices)
+        println(args[i])
+}
