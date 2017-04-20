@@ -22,4 +22,6 @@ fun main(args: Array<String>) {
     useAWhileLoop(args)
     // Use a for-loop
     useAForLoop(args)
+    // Use ranges and in
+    useRangesAndIn(args)
 }

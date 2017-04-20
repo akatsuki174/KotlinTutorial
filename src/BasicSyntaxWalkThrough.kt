@@ -102,3 +102,41 @@ fun useAForLoop(args: Array<String>) {
     for ((index, value) in args.withIndex())
         println("$index: value is $value")
 }
+
+/**
+ * ある数字がある範囲の中にあるか確認
+ * ある数字がある範囲の外にあるか確認
+ * あるコレクションがあるオブジェクトを含むか確認
+ * 参考リンク：http://kotlinlang.org/docs/reference/ranges.html#ranges
+ */
+fun useRangesAndIn(args: Array<String>) {
+    val x = args[0].toInt()
+    // xがある範囲内に入っているか確認
+    val y = 10
+    if (x in 1..y - 1)
+        println("OK")
+
+    //範囲内で繰り返し
+    for (a in 1..5)
+        print("${a} ")
+
+    println()
+    val array = arrayListOf<String>()
+    array.add("aaa")
+    array.add("bbb")
+    array.add("ccc")
+
+    // ある数値が範囲外か確認
+    if (x !in 0..array.size - 1)
+        println("Out: array has only ${array.size} elements. x = ${x}")
+
+    // コレクションがあるオブジェクトを含むか確認
+    if ("aaa" in array) // collection.contains(obj) is called
+        println("Yes: array contains aaa")
+
+    if ("ddd" in array) // collection.contains(obj) is called
+        println("Yes: array contains ddd")
+    else
+        println("No: array doesn't contains ddd")
+}
+
