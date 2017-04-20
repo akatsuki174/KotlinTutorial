@@ -94,7 +94,11 @@ fun useAForLoop(args: Array<String>) {
     for (arg in args)
         println(arg)
     println()
-    // 以下の書き方も可能
+    // indexを使う例
     for (i in args.indices)
         println(args[i])
+    println()
+    // indexとvalueを使う例
+    for ((index, value) in args.withIndex())
+        println("$index: value is $value")
 }
