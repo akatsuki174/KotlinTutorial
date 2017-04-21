@@ -119,6 +119,10 @@ fun useRangesAndIn(args: Array<String>) {
     //範囲内で繰り返し
     for (a in 1..5)
         print("${a} ")
+    // 数を逆順に処理したければdownTo関数が使える
+    for (i in 5 downTo 1) print(i)
+    // xつごとに処理を実行したい場合はstap関数が使える
+    for (i in 1..4 step 2) print(i) // 2つごとに処理を実行
 
     println()
     val array = arrayListOf<String>()
