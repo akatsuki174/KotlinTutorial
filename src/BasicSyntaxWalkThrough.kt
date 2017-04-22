@@ -135,10 +135,10 @@ fun useRangesAndIn(args: Array<String>) {
         println("Out: array has only ${array.size} elements. x = ${x}")
 
     // コレクションがあるオブジェクトを含むか確認
-    if ("aaa" in array) // collection.contains(obj) is called
+    if ("aaa" in array) // collection.contains(obj)が呼ばれる
         println("Yes: array contains aaa")
 
-    if ("ddd" in array) // collection.contains(obj) is called
+    if ("ddd" in array) // collection.contains(obj)が呼ばれる
         println("Yes: array contains ddd")
     else
         println("No: array doesn't contains ddd")
