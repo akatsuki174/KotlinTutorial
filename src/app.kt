@@ -38,4 +38,9 @@ fun main(args: Array<String>) {
     usewhen(0L)
     usewhen(MyClass())
     usewhen("hello")
+
+    // Destructuring declarations and Data classes
+
+    // Destructuring declarations
+    destructuringDeclarations()
 }
