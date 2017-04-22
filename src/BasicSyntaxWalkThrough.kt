@@ -121,7 +121,7 @@ fun useRangesAndIn(args: Array<String>) {
         print("${a} ")
     // 数を逆順に処理したければdownTo関数が使える
     for (i in 5 downTo 1) print(i)
-    // xつごとに処理を実行したい場合はstap関数が使える
+    // xつごとに処理を実行したい場合はstep関数が使える
     for (i in 1..4 step 2) print(i) // 2つごとに処理を実行
 
     println()
