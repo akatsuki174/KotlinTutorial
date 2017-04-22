@@ -144,3 +144,20 @@ fun useRangesAndIn(args: Array<String>) {
         println("No: array doesn't contains ddd")
 }
 
+/**
+ * whenの使い方について
+ * 参考リンク：http://kotlinlang.org/docs/reference/control-flow.html#when-expression
+ */
+fun usewhen(obj: Any) {
+    when (obj) {
+        1 -> println("One")
+        "Hello" -> println("Greeting")
+        is Long -> println("Long")
+        !is String -> println("Not a string")
+        else -> println("Unknown")
+    }
+}
+
+class MyClass() {
+}
+

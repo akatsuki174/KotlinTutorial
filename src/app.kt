@@ -24,4 +24,10 @@ fun main(args: Array<String>) {
     useAForLoop(args)
     // Use ranges and in
     useRangesAndIn(args)
+    // Use when
+    usewhen("Hello")
+    usewhen(1)
+    usewhen(0L)
+    usewhen(MyClass())
+    usewhen("hello")
 }
