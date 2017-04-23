@@ -11,11 +11,18 @@
 fun destructuringDeclarations() {
     val pair = Pair(1, "one")
     val (num, name) = pair
+    // このようにして受け取ることもできる
+    //val num = pair.component1()
+    //val name = pair.component2()
 
+    // それぞれ独立で使うことができる
     println("num = $num, name = $name")
 }
 
+// 2つのイミュータブルな値を表すデータクラス
 class Pair<K, V>(val first: K, val second: V) {
+    // 多重宣言で複数の値を返すようにするためにcomponent*()を用意している
+    // （*の部分は任意の整数）
     operator fun component1(): K {
         return first
     }
