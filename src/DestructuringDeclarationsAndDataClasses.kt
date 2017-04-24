@@ -65,5 +65,8 @@ fun dataClasses() {
     // 特に定義しなくてもequals関数が使える
     val otherUser = User("Tom", 2)
     println(user.equals(otherUser))
+
+    println(user.component1())
+    println(user.component2())
 }
 
