@@ -53,7 +53,7 @@ fun dataClasses() {
 
     // or
 
-    val (name, id) = getUser()
+    val (name, id) = getUser() // 分解宣言
     println("name = $name, id = $id")
 
     // or
