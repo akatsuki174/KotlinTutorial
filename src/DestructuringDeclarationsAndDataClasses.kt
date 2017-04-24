@@ -59,11 +59,11 @@ fun dataClasses() {
     // 特に定義しなくてもtoString関数が使える
     println(user.toString())
 
+    // 特に定義しなくてもhashCode関数が使える
+    println(user.hashCode())
+
     // 特に定義しなくてもequals関数が使える
     val otherUser = User("Tom", 2)
     println(user.equals(otherUser))
-
-    // 特に定義しなくてもhashCode関数が使える
-    println(user.hashCode())
 }
 
