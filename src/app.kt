@@ -43,4 +43,7 @@ fun main(args: Array<String>) {
 
     // Destructuring declarations
     destructuringDeclarations()
+
+    // Data classes
+    dataClasses()
 }
