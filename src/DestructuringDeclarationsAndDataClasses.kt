@@ -36,9 +36,9 @@ class Pair<K, V>(val first: K, val second: V) {
 }
 
 /**
- *  Data class gets component functions, one for each property declared
- *  in the primary constructor, generated automatically, same for all the
- *  other goodies common for data: toString(), equals(), hashCode() and copy().
+ *  データクラスにはコンポーネント関数があります。
+ *  プライマリコンストラクタで宣言したプロパティを取得できたり、
+ *  toString(), equals(), hashCode(), copy()が容易されていたりします。
  *  参考リンク：http://kotlinlang.org/docs/reference/data-classes.html#data-classes
  */
 data class User(val name: String, val id: Int)
