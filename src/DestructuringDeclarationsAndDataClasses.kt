@@ -50,14 +50,13 @@ fun getUser(): User {
 fun dataClasses() {
     val user = getUser()
     println("name = ${user.name}, id = ${user.id}")
-
     // or
-
     val (name, id) = getUser() // 分解宣言
     println("name = $name, id = $id")
-
     // or
-
     println("name = ${getUser().component1()}, id = ${getUser().component2()}")
+
+    // 特に定義しなくてもtoString関数が使える
+    println(user.toString())
 }
 
