@@ -66,6 +66,8 @@ fun dataClasses() {
     val otherUser = User("Tom", 2)
     println(user.equals(otherUser))
 
+    // プライマリコンストラクタで宣言した順番で
+    // component関数を使って呼ぶことができる
     println(user.component1())
     println(user.component2())
 }
