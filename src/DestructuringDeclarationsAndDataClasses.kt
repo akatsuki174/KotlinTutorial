@@ -66,6 +66,10 @@ fun dataClasses() {
     val otherUser = User("Tom", 2)
     println(user.equals(otherUser))
 
+    // 特に定義しなくてもcopy関数が使える
+    val copyUser = user.copy("Jim", 3)
+    println("name = ${copyUser.name}, id = ${copyUser.id}")
+
     // プライマリコンストラクタで宣言した順番で
     // component関数を使って呼ぶことができる
     println(user.component1())
