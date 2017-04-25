@@ -73,3 +73,16 @@ fun dataClasses() {
     println("name = ${copyUser.name}, id = ${copyUser.id}")
 }
 
+/**
+ *  mapについての用例
+ */
+fun traversingAMap() {
+    val map = hashMapOf<String, Int>()
+    map.put("one", 1)
+    map.put("two", 2)
+
+    for ((key, value) in map) {
+        println("key = $key, value = $value")
+    }
+}
+

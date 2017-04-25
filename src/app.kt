@@ -46,4 +46,7 @@ fun main(args: Array<String>) {
 
     // Data classes
     dataClasses()
+
+    // Traversing a map
+    traversingAMap()
 }
