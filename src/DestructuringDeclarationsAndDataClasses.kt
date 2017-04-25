@@ -54,6 +54,8 @@ fun dataClasses() {
     val (name, id) = getUser() // 分解宣言
     println("name = $name, id = $id")
     // or
+    // プライマリコンストラクタで宣言した順番で
+    // component関数を使って呼ぶことができる
     println("name = ${getUser().component1()}, id = ${getUser().component2()}")
 
     // 特に定義しなくてもtoString関数が使える
@@ -69,10 +71,5 @@ fun dataClasses() {
     // 特に定義しなくてもcopy関数が使える
     val copyUser = user.copy("Jim", 3)
     println("name = ${copyUser.name}, id = ${copyUser.id}")
-
-    // プライマリコンストラクタで宣言した順番で
-    // component関数を使って呼ぶことができる
-    println(user.component1())
-    println(user.component2())
 }
 
