@@ -80,9 +80,16 @@ fun traversingAMap() {
     val map = hashMapOf<String, Int>()
     map.put("one", 1)
     map.put("two", 2)
+    // このように初期化することもできる
+    //val map2 = hashMapOf("一" to 1, "二" to 2)
+    //println("value = ${map2.get("一")}")
 
     for ((key, value) in map) {
         println("key = $key, value = $value")
     }
+
+    // 別の方法でvalueを取り出すこともできる
+    println("value = ${map.get("one")}")
+    println("value = ${map["two"]}")
 }
 
