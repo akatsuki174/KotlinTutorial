@@ -75,6 +75,7 @@ fun dataClasses() {
 
 /**
  *  mapについての用例
+ *  参考リンク：https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html
  */
 fun traversingAMap() {
     val map = hashMapOf<String, Int>()
