@@ -85,6 +85,10 @@ fun traversingAMap() {
     //val map2 = hashMapOf("一" to 1, "二" to 2)
     //println("value = ${map2.get("一")}")
 
+    // JavaにもあったようにLinkedHashMap,SortedMapが使える
+    //val linkedMap = linkedMapOf("mikan" to "🍊", "apple" to "🍎")
+    //val sortedMapOf = sortedMapOf("mikan" to "🍊", "apple" to "🍎")
+
     for ((key, value) in map) {
         println("key = $key, value = $value")
     }
