@@ -12,24 +12,27 @@
 import kotlin.reflect.KProperty
 
 class Example {
-    var p: String by Delegate()
+    // プロパティがvarの場合はsetValueも実装している必要がある
+    var p: String by Delegate() // プロパティの委譲
 
     override fun toString() = "Example Class"
 }
 
 class Delegate() {
+    // KPropertyにはプロパティ名や型の情報が入っている
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String {
-        return "$thisRef, thank you for delegating '${prop.name}' to me!"
+        return "getter: $thisRef, thank you for delegating '${prop.name}' to me!"
     }
 
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, value: String) {
-        println("$value has been assigned to ${prop.name} in $thisRef")
+        println("setter: $value has been assigned to ${prop.name} in $thisRef")
     }
 }
 
 fun customDelegate() {
-    val e = Example()
-    println(e.p)
-    e.p = "NEW"
+    val example = Example()
+    println(example.p)  // getterが呼ばれる
+    example.p = "NEW"   // setterが呼ばれる
+    println(example.p) // getterが呼ばれる
 }
 
