@@ -9,11 +9,17 @@
  * getValue()とsetValue()を提供する必要があります。
  */
 
+import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 class Example {
     // プロパティがvarの場合はsetValueも実装している必要がある
     var p: String by Delegate() // プロパティの委譲
+
+    var obs: String by Delegates.observable("default") {
+        prop, old, new ->
+        println("$old -> $new")
+    }
 
     override fun toString() = "Example Class"
 }
@@ -34,5 +40,13 @@ fun customDelegate() {
     println(example.p)  // getterが呼ばれる
     example.p = "NEW"   // setterが呼ばれる
     println(example.p) // getterが呼ばれる
+
+    // Standard Delegates
+
+    // observable delegate
+    // 値の変更を検知することができる
+    println("最初 = ${example.obs}")
+    example.obs = "値の代入"
+    println("代入後 = ${example.obs}")
 }
 
