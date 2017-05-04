@@ -14,11 +14,17 @@ import kotlin.reflect.KProperty
 
 class Example {
     // プロパティがvarの場合はsetValueも実装している必要がある
+    // valの場合はgetValueだけでも良い
     var p: String by Delegate() // プロパティの委譲
 
     var obs: String by Delegates.observable("default") {
         prop, old, new ->
         println("$old -> $new")
+    }
+
+    val lStr: String by lazy {
+        println("in lazy value")
+        "lazy String"
     }
 
     override fun toString() = "Example Class"
@@ -48,5 +54,11 @@ fun customDelegate() {
     println("最初 = ${example.obs}")
     example.obs = "値の代入"
     println("代入後 = ${example.obs}")
+
+    // lazy
+    // 1回目の呼び出し時にはクロージャ内の処理が行われるが
+    // 2回目以降の呼び出し時には単に初回の評価結果が返される
+    println(example.lStr)   // クロージャ内のprintln()文も実行される
+    println(example.lStr)   // 初回評価結果である"lazy String"しかprintされない
 }
 
