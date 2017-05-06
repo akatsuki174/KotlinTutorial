@@ -2,16 +2,15 @@
  * Created by akatsuki174 on 2017/04/30.
  */
 
+import kotlin.properties.Delegates
+import kotlin.reflect.KProperty
+
 /**
  * 新しい文法として `val <プロパティ名> : <タイプ> by <式>` という形のものが出てくる
  * byの後の式はdelegateである。get()やset()メソッドは委譲されプロパティに対応します。
  * プロパティdelegatesはinterfaceで実装されている必要はありませんが、
  * getValue()とsetValue()を提供する必要があります。
  */
-
-import kotlin.properties.Delegates
-import kotlin.reflect.KProperty
-
 class Example {
     // プロパティがvarの場合はsetValueも実装している必要がある
     // valの場合はgetValueだけでも良い
