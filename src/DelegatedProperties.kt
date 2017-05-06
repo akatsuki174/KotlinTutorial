@@ -22,11 +22,6 @@ class Example {
         println("$old -> $new")
     }
 
-    val lStr: String by lazy {
-        println("in lazy value")
-        "lazy String"
-    }
-
     override fun toString() = "Example Class"
 }
 
@@ -55,10 +50,28 @@ fun customDelegate() {
     example.obs = "値の代入"
     println("代入後 = ${example.obs}")
 
-    // lazy
+}
+
+/**
+ * Delegates.lazy()は遅延プロパティを返す。
+ * 最初にgetが呼ばれた時はlazy()が渡されたラムダ式が実行され、結果を保持する。
+ * それ以降getが呼ばれた時は単に保持していた結果を返す。
+ * スレッドセーフにしたい場合は、代わりにblockingLazy()を使います。
+ * この場合、1つのスレッドだけで値が計算され、全てのスレッドは同じ値を参照します。
+ */
+
+class LazySample {
+    val lazy: String by lazy {
+        println("computed!")
+        "my lazy"
+    }
+}
+
+fun lazyProperty() {
+    val sample = LazySample()
     // 1回目の呼び出し時にはクロージャ内の処理が行われるが
     // 2回目以降の呼び出し時には単に初回の評価結果が返される
-    println(example.lStr)   // クロージャ内のprintln()文も実行される
-    println(example.lStr)   // 初回評価結果である"lazy String"しかprintされない
+    println("lazy = ${sample.lazy}")    // クロージャ内のprintln()文も実行される
+    println("lazy = ${sample.lazy}")    // 初回評価結果である"lazy String"しかprintされない
 }
 

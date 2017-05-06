@@ -57,4 +57,7 @@ fun main(args: Array<String>) {
 
     // Custom delegate
     customDelegate()
+
+    // Lazy property
+    lazyProperty()
 }
