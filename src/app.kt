@@ -60,4 +60,7 @@ fun main(args: Array<String>) {
 
     // Lazy property
     lazyProperty()
+
+    // Observable property
+    observableProperty()
 }

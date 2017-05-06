@@ -16,11 +16,6 @@ class Example {
     // valの場合はgetValueだけでも良い
     var p: String by Delegate() // プロパティの委譲
 
-    var obs: String by Delegates.observable("default") {
-        prop, old, new ->
-        println("$old -> $new")
-    }
-
     override fun toString() = "Example Class"
 }
 
@@ -40,15 +35,6 @@ fun customDelegate() {
     println(example.p)  // getterが呼ばれる
     example.p = "NEW"   // setterが呼ばれる
     println(example.p) // getterが呼ばれる
-
-    // Standard Delegates
-
-    // observable delegate
-    // 値の変更を検知することができる
-    println("最初 = ${example.obs}")
-    example.obs = "値の代入"
-    println("代入後 = ${example.obs}")
-
 }
 
 /**
@@ -74,3 +60,23 @@ fun lazyProperty() {
     println("lazy = ${sample.lazy}")    // 初回評価結果である"lazy String"しかprintされない
 }
 
+/**
+ * observable()関数は2つの引数（初期値と修正のための値）を取る。
+ * ハンドラはnameを呼び出すたびに呼ばれ、3つのパラメータ（割り当てられている値、古い値、新しい値）を持っている。
+ * もし割り当てを拒否したい場合はobservable()の代わりにvetoable()を使用する。
+ * vetoableはプロパティへの代入前にラムダ式が実行され、代入を行うかどうかを値として返す。
+ * これにより、代入を拒否することができる。
+ */
+class Person {
+    var name: String by Delegates.observable("no name") {
+        d, old, new ->
+        println("$old - $new")
+    }
+}
+
+fun observableProperty() {
+    val person = Person()
+    println("最初 = ${person.name}")
+    person.name = "Carl"
+    println("代入後 = ${person.name}")
+}
