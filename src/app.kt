@@ -63,4 +63,7 @@ fun main(args: Array<String>) {
 
     // Observable property
     observableProperty()
+
+    // NotNull property
+    notNullProperty()
 }

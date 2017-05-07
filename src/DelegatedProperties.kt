@@ -80,3 +80,24 @@ fun observableProperty() {
     person.name = "Carl"
     println("代入後 = ${person.name}")
 }
+
+/**
+ * Kotlinでは初期化されていない非抽象プロパティを持つことはできません。
+ * nullで初期化することもできますが、アクセスするたびに確認する必要があります。
+ * Kotlinにはこれを解決するdelegateがあり、あるプロパティに書き込みする前に読み込みをしようとすると
+ * 例外が発生します。最初の割り当て後は期待通りに動きます。
+ */
+class Animal {
+    var name: String by Delegates.notNull()
+
+    fun init(name: String) {
+        this.name = name
+    }
+}
+
+fun notNullProperty() {
+    val animal = Animal()
+    // animal.name -> IllegalStateException
+    animal.init("Carl")
+    println(animal.name)
+}
