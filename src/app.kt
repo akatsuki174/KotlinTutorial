@@ -66,4 +66,7 @@ fun main(args: Array<String>) {
 
     // NotNull property
     notNullProperty()
+
+    // Properties in map
+    propertiesInMap()
 }

@@ -101,3 +101,21 @@ fun notNullProperty() {
     animal.init("Carl")
     println(animal.name)
 }
+
+/**
+ * プロパティをmapに保存する例。Jsonをパースしたりその他動的なことをやる際によく使われている。
+ * mapから値を取り出す時は文字列のキーを用います。
+ * もちろん、 read-onlyのmapではなくMutableなmapにしてvarを使えば割り当て時にmap変更を可能にすることができます。
+ */
+class Paticipate(val map: Map<String, Any?>) {
+    val name: String by map
+    val age: Int     by map
+}
+
+fun propertiesInMap() {
+    val paticipate = Paticipate(mapOf(
+            "name" to "John Doe",
+            "age" to 25
+    ))
+    println("name = ${paticipate.name}, age = ${paticipate.age}")
+}
