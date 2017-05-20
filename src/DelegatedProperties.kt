@@ -57,7 +57,7 @@ fun lazyProperty() {
     // 1回目の呼び出し時にはクロージャ内の処理が行われるが
     // 2回目以降の呼び出し時には単に初回の評価結果が返される
     println("lazy = ${sample.lazy}")    // クロージャ内のprintln()文も実行される
-    println("lazy = ${sample.lazy}")    // 初回評価結果である"lazy String"しかprintされない
+    println("lazy = ${sample.lazy}")    // 初回評価結果である"my lazy"しかprintされない
 }
 
 /**
