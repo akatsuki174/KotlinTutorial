@@ -112,10 +112,26 @@ class Paticipate(val map: Map<String, Any?>) {
     val age: Int     by map
 }
 
+// MutableMap
+class Dog(val map: MutableMap<String, Any?>) {
+    var name: String by map
+    var age: Int     by map
+}
+
 fun propertiesInMap() {
     val paticipate = Paticipate(mapOf(
             "name" to "John Doe",
             "age" to 25
     ))
     println("name = ${paticipate.name}, age = ${paticipate.age}")
+
+    val dog = Dog(mutableMapOf(
+            "name" to "Pochi",
+            "age" to 2
+    ))
+    println("name = ${dog.name}, age = ${dog.age}")
+    dog.name = "Taro"
+    dog.age = 3
+    // MutableMapなので変更された値を出力できる
+    println("name = ${dog.name}, age = ${dog.age}")
 }
