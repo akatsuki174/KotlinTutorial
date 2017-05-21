@@ -41,14 +41,28 @@ fun customDelegate() {
  * Delegates.lazy()は遅延プロパティを返す。
  * 最初にgetが呼ばれた時はlazy()が渡されたラムダ式が実行され、結果を保持する。
  * それ以降getが呼ばれた時は単に保持していた結果を返す。
- * スレッドセーフにしたい場合は、代わりにblockingLazy()を使います。
- * この場合、1つのスレッドだけで値が計算され、全てのスレッドは同じ値を参照します。
  */
 
 class LazySample {
     val lazy: String by lazy {
         println("computed!")
         "my lazy"
+    }
+
+    // 初期化デリゲートの同期が必要なく、複数スレッドで同時に実行できるようにしたい場合は
+    // LazyThreadSafetyMode.PUBLICATION`をlazy()関数のパラメータとして渡す
+    val publicationLazy: String by lazy(LazyThreadSafetyMode.PUBLICATION) {
+        "LazyThreadSafetyMode.PUBLICATION"
+    }
+
+    // 初期化が常にシングルスレッドで行われることがわかっている時
+    val noneLazy: String by lazy(LazyThreadSafetyMode.NONE) {
+        "LazyThreadSafetyMode.NONE"
+    }
+
+    // 1つのスレッドしかlazyインスタンスを初期化できないことを保証したい時
+    val synchronizyedLazy: String by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+        "LazyThreadSafetyMode.SYNCHRONIZED"
     }
 }
 
