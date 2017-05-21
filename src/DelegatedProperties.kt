@@ -87,13 +87,25 @@ class Person {
         println(d) // `var Person.name: kotlin.String`が出力される
         println("$old - $new")
     }
+
+    var age: Int by Delegates.vetoable(3) {
+        d, old, new ->
+        println("$old -> $new")
+        old < new
+    }
 }
 
 fun observableProperty() {
     val person = Person()
-    println("最初 = ${person.name}")
+    println("name: 最初 = ${person.name}")
     person.name = "Carl"
-    println("代入後 = ${person.name}")
+    println("name: 代入後 = ${person.name}")
+
+    println("age: 最初 = ${person.age}")
+    person.age = 4
+    println("age: 代入後 = ${person.age}")
+    person.age = 2
+    println("age: 代入拒否後 = ${person.age}")
 }
 
 /**
