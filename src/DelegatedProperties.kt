@@ -76,7 +76,7 @@ fun lazyProperty() {
 
 /**
  * observable()関数は2つの引数（初期値と修正のための値）を取る。
- * ハンドラはnameを呼び出すたびに呼ばれ、3つのパラメータ（割り当てられている値、古い値、新しい値）を持っている。
+ * ハンドラはnameに値を割り当てるたびに呼ばれ、3つのパラメータ（割り当てられている値、古い値、新しい値）を持っている。
  * もし割り当てを拒否したい場合はobservable()の代わりにvetoable()を使用する。
  * vetoableはプロパティへの代入前にラムダ式が実行され、代入を行うかどうかを値として返す。
  * これにより、代入を拒否することができる。
@@ -84,6 +84,7 @@ fun lazyProperty() {
 class Person {
     var name: String by Delegates.observable("no name") {
         d, old, new ->
+        println(d) // `var Person.name: kotlin.String`が出力される
         println("$old - $new")
     }
 }
@@ -103,6 +104,7 @@ fun observableProperty() {
  */
 class Animal {
     var name: String by Delegates.notNull()
+    // var age: Int <- これだと初期値がないので怒られる
 
     fun init(name: String) {
         this.name = name
