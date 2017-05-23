@@ -77,4 +77,11 @@ fun main(args: Array<String>) {
 
     // Properties in map
     propertiesInMap()
+
+    /**
+     * Callable references
+     */
+
+    // Reference to a function
+    referenceToAFunction()
 }
