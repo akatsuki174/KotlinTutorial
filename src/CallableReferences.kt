@@ -14,3 +14,21 @@ fun referenceToAFunction() {
 }
 
 fun isOdd(x: Int) = x % 2 != 0
+
+/**
+ * 高階関数はcompose(f, g) = f(g(*))のように渡された2つの関数を返します。
+ * これはcallable referencesにも適用することができます。
+ */
+
+fun compositionOfFunctions() {
+    val oddLength = compose(::isOdd, ::length)
+    val strings = listOf("a", "ab", "abc")
+    println(strings.filter(oddLength))
+}
+
+fun length(s: String) = s.length
+
+fun <A, B, C> compose(f: (B) -> C, g: (A) -> B): (A) -> C {
+    return { x -> f(g(x)) }
+}
+

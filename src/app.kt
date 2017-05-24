@@ -84,4 +84,7 @@ fun main(args: Array<String>) {
 
     // Reference to a function
     referenceToAFunction()
+
+    // Composition of functions
+    compositionOfFunctions()
 }
