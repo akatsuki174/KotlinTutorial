@@ -26,6 +26,7 @@ fun square(i: Int): Int = i * i
 /**
  * 高階関数はcompose(f, g) = f(g(*))のように渡された2つの関数を返します。
  * これはcallable referencesにも適用することができます。
+ * 高階関数 = 関数を引数として受け取ったり、返り値として返すような関数のこと
  */
 
 fun compositionOfFunctions() {
