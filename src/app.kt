@@ -6,11 +6,11 @@ fun main(args: Array<String>) {
     readingANameFromTheCommandLine(args)
     readingManyNamesFromTheCommandLine(args)
     aMultiLanguageHello(args)
-    AnObjectOrientedHello(args[0]).greet()
     /**
      * Hello World
      */
 
+    anObjectOrientedHello(args[0]).greet()
 
     /**
      * Basic syntax walk-through

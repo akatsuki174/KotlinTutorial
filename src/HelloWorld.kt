@@ -99,7 +99,7 @@ internal fun aMultiLanguageHello(args: Array<String>) {
  * このオブジェクトを生成する時にnewというキーワードは不要
  * 参考リンク：http://kotlinlang.org/docs/reference/classes.html#classes
  */
-class AnObjectOrientedHello(val name: String) {
+class anObjectOrientedHello(val name: String) {
     // このように書くこともできるがプライマリコンストラクタがアノテーションや可視性修飾子を
     // 持っていない場合は↑の書き方でも良い
     // class AnObjectOrientedHello constructor(val name: String) {
