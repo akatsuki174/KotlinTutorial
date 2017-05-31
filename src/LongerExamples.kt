@@ -1,3 +1,84 @@
 /**
  * Created by akatsuki174 on 2017/05/28.
  */
+
+/**
+ * この例は有名な"99 Bottles of Beer"というプログラムを元に作られている。
+ * ※99 Bottles of Beerというのはマザーグースの歌詞を出力する為の
+ *  プログラミング言語のコードがまとめられているサイトらしいです。
+ * 詳しくはこちら：http://99-bottles-of-beer.net/
+ *
+ * ポイントは以下の歌詞を持つ歌をプリントアウトすることです。
+ *
+ *     The "99 bottles of beer" song
+ *
+ *     99 bottles of beer on the wall, 99 bottles of beer.
+ *     Take one down, pass it around, 98 bottles of beer on the wall.
+ *
+ *     98 bottles of beer on the wall, 98 bottles of beer.
+ *     Take one down, pass it around, 97 bottles of beer on the wall.
+ *
+ *       ...
+ *
+ *     2 bottles of beer on the wall, 2 bottles of beer.
+ *     Take one down, pass it around, 1 bottle of beer on the wall.
+ *
+ *     1 bottle of beer on the wall, 1 bottle of beer.
+ *     Take one down, pass it around, no more bottles of beer on the wall.
+ *
+ *     No more bottles of beer on the wall, no more bottles of beer.
+ *     Go to the store and buy some more, 99 bottles of beer on the wall.
+ *
+ * さらに、使用するボトルの数をコマンドライン引数から決めることができます。
+ */
+package bottles
+
+fun ninetyNineBottlesOfBeer(args: Array<String>) {
+    if (args.isEmpty) {
+        printBottles(99)
+    } else {
+        try {
+            printBottles(args[0].toInt())
+        } catch (e: NumberFormatException) {
+            println("You have passed '${args[0]}' as a number of bottles, " +
+                    "but it is not a valid integer number")
+        }
+    }
+}
+
+fun printBottles(bottleCount: Int) {
+    if (bottleCount <= 0) {
+        println("No bottles - no song")
+        return
+    }
+
+    println("The \"${bottlesOfBeer(bottleCount)}\" song\n")
+
+    var bottles = bottleCount
+    while (bottles > 0) {
+        val bottlesOfBeer = bottlesOfBeer(bottles)
+        print("$bottlesOfBeer on the wall, $bottlesOfBeer.\nTake one down, pass it around, ")
+        bottles--
+        println("${bottlesOfBeer(bottles)} on the wall.\n")
+    }
+    println("No more bottles of beer on the wall, no more bottles of beer.\n" +
+            "Go to the store and buy some more, ${bottlesOfBeer(bottleCount)} on the wall.")
+}
+
+fun bottlesOfBeer(count: Int): String =
+        when (count) {
+            0 -> "no more bottles"
+            1 -> "1 bottle"
+            else -> "$count bottles"
+        } + " of beer"
+
+/*
+ * An excerpt from the Standard Library
+ */
+
+
+// This is an extension property, i.e. a property that is defined for the
+// type Array<T>, but does not sit inside the class Array
+val <T> Array<T>.isEmpty: Boolean get() = size == 0
+
+
