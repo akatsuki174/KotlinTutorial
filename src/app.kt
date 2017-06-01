@@ -1,3 +1,4 @@
+import LongerExamples.htmlBuilder
 import bottles.ninetyNineBottlesOfBeer
 
 /**
@@ -96,4 +97,7 @@ fun main(args: Array<String>) {
 
     // 99 Bottles of Beer
     ninetyNineBottlesOfBeer(args)
+
+    // HTML Builder
+    htmlBuilder(args)
 }
