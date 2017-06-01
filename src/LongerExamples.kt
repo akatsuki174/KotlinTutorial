@@ -73,12 +73,11 @@ fun bottlesOfBeer(count: Int): String =
         } + " of beer"
 
 /*
- * An excerpt from the Standard Library
+ * スタンダードライブラリから一部抜粋
  */
 
-
-// This is an extension property, i.e. a property that is defined for the
-// type Array<T>, but does not sit inside the class Array
+// これは拡張プロパティです。つまり、Array<T>型で定義されていますが、
+// Arrayクラスの中にはありません。
 val <T> Array<T>.isEmpty: Boolean get() = size == 0
 
 

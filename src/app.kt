@@ -1,3 +1,5 @@
+import bottles.ninetyNineBottlesOfBeer
+
 /**
  * Created by akatsuki174 on 2017/04/08.
  */
@@ -87,4 +89,11 @@ fun main(args: Array<String>) {
 
     // Composition of functions
     compositionOfFunctions()
+
+    /**
+     * Longer examples
+     */
+
+    // 99 Bottles of Beer
+    ninetyNineBottlesOfBeer(args)
 }
