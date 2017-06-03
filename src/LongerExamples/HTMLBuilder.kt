@@ -12,9 +12,14 @@ package LongerExamples
  *
  * 詳しくはこちらのページを御覧ください。
  * http://kotlinlang.org/docs/reference/type-safe-builders.html
+ *
+ * ※Builderパターンはbuild.gradleの定義にも使われている書き方。
+ *  独自のブロックを定義してその中で初期化する。
+ *  XMLの生成やUIコンポーネントのレイアウト、3Dシーンの描画などに有効
  */
 
 fun htmlBuilder(args: Array<String>) {
+    // ビルドしたいモデルを定義
     val result =
             html {
                 head {
@@ -24,10 +29,10 @@ fun htmlBuilder(args: Array<String>) {
                     h1 { +"XML encoding with Kotlin" }
                     p { +"this format can be used as an alternative markup to XML" }
 
-                    // an element with attributes and text content
+                    // 属性やテキストコンテンツを持つ要素
                     a(href = "http://jetbrains.com/kotlin") { +"Kotlin" }
 
-                    // mixed content
+                    // 要素が入れ子になっている
                     p {
                         +"This is some"
                         b { +"mixed" }
@@ -37,7 +42,7 @@ fun htmlBuilder(args: Array<String>) {
                     }
                     p { +"some text" }
 
-                    // content generated from command-line arguments
+                    // コマンドライン引数から生成したコンテンツ
                     p {
                         +"Command line arguments were:"
                         ul {
@@ -141,6 +146,9 @@ class A() : BodyTag("a") {
         }
 }
 
+// `クラス名().->`と書くことで当該クラスをレシーバーとして
+// そのクラスインスタンスに従属する引数なしの関数という定義になります。
+// htmlに引数として関数リテラルを渡したとき、それは拡張関数として型付けされます
 fun html(init: HTML.() -> Unit): HTML {
     val html = HTML()
     html.init()
