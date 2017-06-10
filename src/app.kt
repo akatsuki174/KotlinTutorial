@@ -100,4 +100,7 @@ fun main(args: Array<String>) {
 
     // HTML Builder
     htmlBuilder(args)
+
+    // Life
+    life()
 }
