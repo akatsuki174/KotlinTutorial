@@ -1,4 +1,5 @@
 import LongerExamples.htmlBuilder
+import LongerExamples.life
 import bottles.ninetyNineBottlesOfBeer
 
 /**
