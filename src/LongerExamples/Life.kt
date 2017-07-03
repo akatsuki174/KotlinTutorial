@@ -10,13 +10,12 @@ package LongerExamples
  */
 
 /*
- * A field where cells live. Effectively immutable
+ * セルが生息するところ。不変。
  */
 class Field(
         val width: Int,
         val height: Int,
-        // This function tells the constructor which cells are alive
-        // if init(i, j) is true, the cell (i, j) is alive
+        // この関数はinit(i, j)がtrueかつ生きていたらコンストラクタに伝える役目がある
         init: (Int, Int) -> Boolean
 ) {
     private val live: Array<Array<Boolean>> = Array(height) { i -> Array(width) { j -> init(i, j) } }
@@ -26,7 +25,7 @@ class Field(
             j in 0..width - 1 &&
             live[i][j]) 1 else 0
 
-    // How many neighbors of (i, j) are alive?
+    // 近隣のセルがどれくらい生きているか
     fun liveNeighbors(i: Int, j: Int) =
             liveCount(i - 1, j - 1) +
                     liveCount(i - 1, j) +
@@ -37,23 +36,22 @@ class Field(
                     liveCount(i + 1, j) +
                     liveCount(i + 1, j + 1)
 
-    // You can say field[i, j], and this function gets called
+    // field[i, j]を指定したらこの関数が呼び出される
     operator fun get(i: Int, j: Int) = live[i][j]
 }
 
 /**
- * This function takes the present state of the field
- * and returns a new field representing the next moment of time
+ * この関数はフィールドの現在の状況を取得し、次のタイミングでの新しいフィールドを返す
  */
 fun next(field: Field): Field {
     return Field(field.width, field.height) { i, j ->
         val n = field.liveNeighbors(i, j)
         if (field[i, j])
-        // (i, j) is alive
-            n in 2..3 // It remains alive iff it has 2 or 3 neighbors
+        // (i, j)は生きている
+            n in 2..3 // 2か3の隣接セルが生きていたらまたこのセルも生きている
         else
-        // (i, j) is dead
-            n == 3 // A new cell is born if there are 3 neighbors alive
+        // (i, j)が死んでいる
+            n == 3 // 3つの隣接セルが生きていたら新しいセルが生まれる
     }
 }
 
