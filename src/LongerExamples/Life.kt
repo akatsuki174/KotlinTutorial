@@ -55,9 +55,9 @@ fun next(field: Field): Field {
     }
 }
 
-/** A few colony examples here */
+/** コロニーの例はこちら */
 fun life() {
-    // Simplistic demo
+    // シンプルなデモ
     runGameOfLife("***", 3)
     // "Star burst"
     runGameOfLife("""
@@ -67,7 +67,7 @@ fun life() {
         ___*___
         _______
     """, 10)
-    // Stable colony
+    // 安定したコロニー
     runGameOfLife("""
         _____
         __*__
@@ -75,20 +75,20 @@ fun life() {
         __*__
         _____
     """, 3)
-    // Stable from the step 2
+    // ステップ2から安定
     runGameOfLife("""
         __**__
         __**__
         __**__
     """, 3)
-    // Oscillating colony
+    // 揺れた状態のコロニー
     runGameOfLife("""
         __**____
         __**____
         ____**__
         ____**__
     """, 6)
-    // A fancier oscillating colony
+    // だいぶ揺れたコロニー
     runGameOfLife("""
         -------------------
         -------***---***---
