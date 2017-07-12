@@ -1,6 +1,7 @@
 import LongerExamples.htmlBuilder
 import LongerExamples.life
 import bottles.ninetyNineBottlesOfBeer
+import Problem.sum
 
 /**
  * Created by akatsuki174 on 2017/04/08.
@@ -104,4 +105,10 @@ fun main(args: Array<String>) {
 
     // Life
     life()
+    /**
+     * Problem
+     */
+
+    // Sum
+    print(sum(arrayOf(10, 3, 6)))
 }
