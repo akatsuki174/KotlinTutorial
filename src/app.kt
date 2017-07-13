@@ -1,6 +1,7 @@
 import LongerExamples.htmlBuilder
 import LongerExamples.life
 import bottles.ninetyNineBottlesOfBeer
+import Problem.indexOfMax
 import Problem.sum
 
 /**
@@ -111,4 +112,7 @@ fun main(args: Array<String>) {
 
     // Sum
     print(sum(arrayOf(10, 3, 6)))
+
+    // Index of Maximum
+    print(indexOfMax(intArrayOf(1, 4, 10, 3)))
 }
